@@ -32,27 +32,6 @@
 
 ---
 
-## 🌐 Publicación en GitHub Pages (Guía Paso a Paso)
-
-Para publicar el juego usando tu repositorio oficial de GitHub:
-
-1. Crea o usa el repositorio público en GitHub: `https://github.com/joseortiz20011/CyberNexus3D`
-2. Inicializa git y sube tus archivos:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: CYBER NEXUS 3D"
-   git branch -M main
-   git remote add origin https://github.com/joseortiz20011/CyberNexus3D.git
-   git push -u origin main
-   ```
-3. En GitHub, ve a **Settings** ➔ **Pages**.
-4. En la sección **Source**, selecciona `Deploy from a branch`, elige la rama `main` / `/ (root)` y haz clic en **Save**.
-5. Tu juego estará disponible públicamente en la URL:
-   `https://joseortiz20011.github.io/CyberNexus3D/`
-
----
-
 ## ⌨️ Guía de Controles
 
 | Acción | Control Teclado / Mouse |
