@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CYBER NEXUS 3D: OMEGA ASCENT - 2D/3D Arcade Shooter</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700;900&family=Press+Start+2P&display=swap');
 
         * {
             margin: 0;
@@ -43,6 +44,8 @@
             width: 100%;
             height: 100%;
             background: #03040c;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
         }
 
         /* CRT Overlay Effect */
@@ -50,7 +53,10 @@
             content: " ";
             display: block;
             position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.18) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
             z-index: 10;
             background-size: 100% 4px, 6px 100%;
@@ -60,7 +66,10 @@
         /* UI Screens */
         .ui-screen {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -92,9 +101,17 @@
         }
 
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         h2 {
@@ -172,7 +189,10 @@
         /* HUD Overlay */
         #hud {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 15;
             padding: 16px 28px;
@@ -296,8 +316,13 @@
         }
 
         @keyframes pulse {
-            0% { transform: scale(1) rotate(3deg); }
-            100% { transform: scale(1.18) rotate(6deg); }
+            0% {
+                transform: scale(1) rotate(3deg);
+            }
+
+            100% {
+                transform: scale(1.18) rotate(6deg);
+            }
         }
 
         /* Banner Announcements */
@@ -499,6 +524,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div id="game-container" class="crt">
@@ -533,7 +559,8 @@
                     <div class="stat-label">Puntaje / Cyber-Chips</div>
                     <div id="score-display" class="stat-value">0</div>
                     <div style="color: #ffe600; font-weight: 700;">Chips: <span id="chips-display">0</span> 💎</div>
-                    <div style="color: #ff0055; margin-top: 4px;">Vidas: <span id="lives-display">❤️❤️❤️</span> | EMP: <span id="bombs-display">💣x1</span></div>
+                    <div style="color: #ff0055; margin-top: 4px;">Vidas: <span id="lives-display">❤️❤️❤️</span> | EMP:
+                        <span id="bombs-display">💣x1</span></div>
                 </div>
             </div>
 
@@ -546,7 +573,8 @@
         <div id="main-menu" class="ui-screen">
             <h1>CYBER NEXUS 3D</h1>
             <h2>OMEGA ASCENT</h2>
-            <p class="subtitle">Videojuego Arcade 2D/3D. Renderizado 3D Proyectado, 3 Pistas de Música Sintetizada Distintas (Menú, Partida y Tienda), 2 Mundos de 5 Niveles cada uno.</p>
+            <p class="subtitle">Videojuego Arcade 2D/3D. Renderizado 3D Proyectado, 3 Pistas de Música Sintetizada
+                Distintas (Menú, Partida y Tienda), 2 Mundos de 5 Niveles cada uno.</p>
 
             <div class="controls-list">
                 <div><span class="key">W A S D</span> Movimiento de la Nave 3D</div>
@@ -640,8 +668,12 @@
         <div id="story-menu" class="ui-screen hidden">
             <h2>INFORME DE MISIÓN DE INTEL</h2>
             <div class="story-box">
-                <p class="story-text"><strong>AÑO 2188:</strong> La Estación Espacial Orbital "Sector Alfa" ha sido infectada por OMEGA-9. Sus unidades biomecánicas perforan hacia el Núcleo Cuántico en el "Sector Omega".</p>
-                <p class="story-text"><strong>ESTRUCTURA DE MISIÓN:</strong> Enfrenta <strong>2 Mundos de 5 Niveles cada uno (10 niveles totales)</strong>. El Mundo 1 culmina en la batalla contra <em>MECHA-HYDRA 5000</em> (Nivel 5), y el Mundo 2 finaliza contra <em>OMEGA-9 OVERLORD</em> (Nivel 10).</p>
+                <p class="story-text"><strong>AÑO 2188:</strong> La Estación Espacial Orbital "Sector Alfa" ha sido
+                    infectada por OMEGA-9. Sus unidades biomecánicas perforan hacia el Núcleo Cuántico en el "Sector
+                    Omega".</p>
+                <p class="story-text"><strong>ESTRUCTURA DE MISIÓN:</strong> Enfrenta <strong>2 Mundos de 5 Niveles cada
+                        uno (10 niveles totales)</strong>. El Mundo 1 culmina en la batalla contra <em>MECHA-HYDRA
+                        5000</em> (Nivel 5), y el Mundo 2 finaliza contra <em>OMEGA-9 OVERLORD</em> (Nivel 10).</p>
             </div>
             <button id="start-game-btn">DESPLEGAR EN NIVEL 1-1 ➔</button>
         </div>
@@ -649,7 +681,8 @@
         <!-- Shop Screen (Between Levels) -->
         <div id="shop-menu" class="ui-screen hidden">
             <h2>CYBER SHOP - MEJORAS CIBERNÉTICAS</h2>
-            <p class="subtitle">Intercambia tus Cyber-Chips recolectados por mejoras estratégicas antes de desplegar en el siguiente nivel.</p>
+            <p class="subtitle">Intercambia tus Cyber-Chips recolectados por mejoras estratégicas antes de desplegar en
+                el siguiente nivel.</p>
             <div style="color: #ffe600; font-size: 1.4rem; font-weight: 700; margin-bottom: 10px;">
                 Saldo Disponible: <span id="shop-chips">0</span> 💎
             </div>
@@ -659,7 +692,8 @@
                     <div>
                         <h4>Daño de Plasma</h4>
                         <p>Aumenta la potencia de tus disparos</p>
-                        <div class="cost-tag">Costo: <span id="cost-dmg">50</span> 💎 (Nvl <span id="lvl-dmg">1</span>)</div>
+                        <div class="cost-tag">Costo: <span id="cost-dmg">50</span> 💎 (Nvl <span id="lvl-dmg">1</span>)
+                        </div>
                     </div>
                     <button onclick="game.buyUpgrade('damage')">MEJORAR</button>
                 </div>
@@ -667,7 +701,8 @@
                     <div>
                         <h4>Cadencia de Fuego</h4>
                         <p>Dispara más proyectiles por segundo</p>
-                        <div class="cost-tag">Costo: <span id="cost-rate">50</span> 💎 (Nvl <span id="lvl-rate">1</span>)</div>
+                        <div class="cost-tag">Costo: <span id="cost-rate">50</span> 💎 (Nvl <span
+                                id="lvl-rate">1</span>)</div>
                     </div>
                     <button onclick="game.buyUpgrade('fireRate')">MEJORAR</button>
                 </div>
@@ -675,7 +710,8 @@
                     <div>
                         <h4>Velocidad Impulso 3D</h4>
                         <p>Mayor agilidad y maniobrabilidad 3D</p>
-                        <div class="cost-tag">Costo: <span id="cost-speed">40</span> 💎 (Nvl <span id="lvl-speed">1</span>)</div>
+                        <div class="cost-tag">Costo: <span id="cost-speed">40</span> 💎 (Nvl <span
+                                id="lvl-speed">1</span>)</div>
                     </div>
                     <button onclick="game.buyUpgrade('speed')">MEJORAR</button>
                 </div>
@@ -683,7 +719,8 @@
                     <div>
                         <h4>Matriz de Salud</h4>
                         <p>Aumenta la salud máxima del casco</p>
-                        <div class="cost-tag">Costo: <span id="cost-hp">60</span> 💎 (Nvl <span id="lvl-hp">1</span>)</div>
+                        <div class="cost-tag">Costo: <span id="cost-hp">60</span> 💎 (Nvl <span id="lvl-hp">1</span>)
+                        </div>
                     </div>
                     <button onclick="game.buyUpgrade('maxHp')">MEJORAR</button>
                 </div>
@@ -710,10 +747,13 @@
 
         <!-- Game Over Screen -->
         <div id="gameover-menu" class="ui-screen hidden">
-            <h1 style="background: linear-gradient(45deg, #ff0055, #ff5500); -webkit-background-clip: text;">SISTEMA DESTRUIDO</h1>
+            <h1 style="background: linear-gradient(45deg, #ff0055, #ff5500); -webkit-background-clip: text;">SISTEMA
+                DESTRUIDO</h1>
             <h2>GAME OVER</h2>
-            <p class="subtitle">Tu caza de vanguardia ha colapsado. OMEGA-9 ha tomado el control absoluto del núcleo cuántico.</p>
-            <p style="font-size: 1.4rem; margin-bottom: 20px; color: #00f3ff;">Puntaje de Misión: <span id="final-score">0</span></p>
+            <p class="subtitle">Tu caza de vanguardia ha colapsado. OMEGA-9 ha tomado el control absoluto del núcleo
+                cuántico.</p>
+            <p style="font-size: 1.4rem; margin-bottom: 20px; color: #00f3ff;">Puntaje de Misión: <span
+                    id="final-score">0</span></p>
             <div class="btn-group">
                 <button id="restart-btn">REINTENTAR NIVEL</button>
                 <button onclick="game.setState('LEVELSELECT')" class="btn-gold">MENÚ DE NIVELES</button>
@@ -722,10 +762,13 @@
 
         <!-- Victory Screen -->
         <div id="victory-menu" class="ui-screen hidden">
-            <h1 style="background: linear-gradient(45deg, #00ff66, #00f3ff); -webkit-background-clip: text;">VICTORIA ABSOLUTA</h1>
+            <h1 style="background: linear-gradient(45deg, #00ff66, #00f3ff); -webkit-background-clip: text;">VICTORIA
+                ABSOLUTA</h1>
             <h2>OMEGA-9 ERADICADO</h2>
-            <p class="subtitle">¡Has completado exitosamente los 2 Mundos y derrotado al avatar 3D final en el Nivel 10!</p>
-            <p style="font-size: 1.6rem; margin-bottom: 20px; color: #ffe600;">Puntaje Legendario: <span id="victory-score">0</span></p>
+            <p class="subtitle">¡Has completado exitosamente los 2 Mundos y derrotado al avatar 3D final en el Nivel 10!
+            </p>
+            <p style="font-size: 1.6rem; margin-bottom: 20px; color: #ffe600;">Puntaje Legendario: <span
+                    id="victory-score">0</span></p>
             <div class="btn-group">
                 <button id="victory-restart-btn">JUGAR DE NUEVO</button>
                 <button onclick="game.setState('LEVELSELECT')" class="btn-gold">MENÚ DE NIVELES</button>
@@ -782,7 +825,7 @@
                     gain.connect(this.ctx.destination);
                     osc.start();
                     osc.stop(this.ctx.currentTime + duration);
-                } catch(e){}
+                } catch (e) { }
             }
 
             playNoise(duration, gainVal = 0.15) {
@@ -809,7 +852,7 @@
                     filter.connect(gain);
                     gain.connect(this.ctx.destination);
                     noise.start();
-                } catch(e){}
+                } catch (e) { }
             }
 
             // Sound Effects
@@ -922,16 +965,16 @@
         }
 
         const MESH_VANGUARD_3D = [
-            {x: 0, y: -24, z: 0},
-            {x: -15, y: 14, z: -7},
-            {x: 15, y: 14, z: -7},
-            {x: 0, y: 9, z: 11}
+            { x: 0, y: -24, z: 0 },
+            { x: -15, y: 14, z: -7 },
+            { x: 15, y: 14, z: -7 },
+            { x: 0, y: 9, z: 11 }
         ];
 
         const MESH_ASTEROID_3D = [
-            {x: -14, y: -18, z: -9}, {x: 14, y: -16, z: -7},
-            {x: 20, y: 0, z: 10}, {x: 10, y: 20, z: -4},
-            {x: -16, y: 16, z: -10}, {x: -22, y: -4, z: 8}
+            { x: -14, y: -18, z: -9 }, { x: 14, y: -16, z: -7 },
+            { x: 20, y: 0, z: 10 }, { x: 10, y: 20, z: -4 },
+            { x: -16, y: 16, z: -10 }, { x: -22, y: -4, z: 8 }
         ];
 
         /* ----------------------------------------------------
@@ -966,7 +1009,7 @@
                 this.startGraceTimer = 0;
 
                 this.stars3D = [];
-                for(let i=0; i<120; i++) {
+                for (let i = 0; i < 120; i++) {
                     this.stars3D.push({
                         x: (Math.random() - 0.5) * 1600,
                         y: (Math.random() - 0.5) * 1200,
@@ -1147,7 +1190,7 @@
 
                 if (levelInWorld === 3 || levelInWorld === 4) {
                     const asteroidCount = 2 + (this.world - 1);
-                    for(let a=0; a<asteroidCount; a++) {
+                    for (let a = 0; a < asteroidCount; a++) {
                         this.entities.asteroids.push({
                             x: Math.random() * (canvas.width - 300) + 150,
                             y: Math.random() * (canvas.height - 300) + 150,
@@ -1341,8 +1384,8 @@
                     this.entities.particles.push({
                         x: this.player.x - Math.cos(aimAngle) * 20,
                         y: this.player.y - Math.sin(aimAngle) * 20,
-                        vx: -Math.cos(aimAngle) * 2.5 + (Math.random()-0.5)*1.5,
-                        vy: -Math.sin(aimAngle) * 2.5 + (Math.random()-0.5)*1.5,
+                        vx: -Math.cos(aimAngle) * 2.5 + (Math.random() - 0.5) * 1.5,
+                        vy: -Math.sin(aimAngle) * 2.5 + (Math.random() - 0.5) * 1.5,
                         life: 0.3,
                         color: this.combo >= 4 ? '#ff0055' : '#00f3ff',
                         radius: Math.random() * 3 + 1
@@ -1842,25 +1885,39 @@
 
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                ctx.fillStyle = '#ffffff';
+                // PIXEL ART Stars — square pixels snapped to grid
                 this.stars3D.forEach(s => {
                     const scale = 350 / (350 + s.z);
-                    const px = canvas.width / 2 + s.x * scale;
-                    const py = canvas.height / 2 + s.y * scale;
-                    const size = Math.max(1, (1000 - s.z) / 250);
-                    ctx.globalAlpha = Math.min(1.0, (1000 - s.z) / 400);
+                    const px = Math.floor(canvas.width / 2 + s.x * scale);
+                    const py = Math.floor(canvas.height / 2 + s.y * scale);
+                    const size = Math.max(2, Math.floor((1000 - s.z) / 220)) * 2;
+                    const alpha = Math.min(1.0, (1000 - s.z) / 400);
+                    const brightness = s.z < 300 ? '#ffffff' : (s.z < 600 ? '#aaccff' : '#4466aa');
+                    ctx.fillStyle = brightness;
+                    ctx.globalAlpha = alpha;
                     ctx.fillRect(px, py, size, size);
                 });
                 ctx.globalAlpha = 1.0;
 
-                ctx.strokeStyle = this.world === 1 ? 'rgba(0, 243, 255, 0.08)' : 'rgba(255, 0, 85, 0.09)';
+                // PIXEL ART grid — larger pixel blocks
+                const gridColor = this.world === 1 ? 'rgba(0, 243, 255, 0.07)' : 'rgba(255, 0, 85, 0.08)';
+                const gridSize = 16;
+                ctx.strokeStyle = gridColor;
                 ctx.lineWidth = 1;
-                const gridSize = 40;
-                for (let x = 0; x < canvas.width; x += gridSize) {
-                    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+                for (let gx = 0; gx < canvas.width; gx += gridSize) {
+                    ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, canvas.height); ctx.stroke();
                 }
-                for (let y = 0; y < canvas.height; y += gridSize) {
-                    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+                for (let gy = 0; gy < canvas.height; gy += gridSize) {
+                    ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(canvas.width, gy); ctx.stroke();
+                }
+                // Brighter major grid lines every 64px
+                ctx.strokeStyle = this.world === 1 ? 'rgba(0, 243, 255, 0.14)' : 'rgba(255, 0, 85, 0.16)';
+                ctx.lineWidth = 1;
+                for (let gx = 0; gx < canvas.width; gx += 64) {
+                    ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, canvas.height); ctx.stroke();
+                }
+                for (let gy = 0; gy < canvas.height; gy += 64) {
+                    ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(canvas.width, gy); ctx.stroke();
                 }
 
                 if (this.state !== 'PLAYING' && this.state !== 'PAUSE') {
@@ -1906,7 +1963,7 @@
 
                     ctx.beginPath();
                     MESH_ASTEROID_3D.forEach((pt, idx) => {
-                        const proj = project3D(pt.x * (ast.radius/20), pt.y * (ast.radius/20), pt.z * (ast.radius/20), ast.rotX, ast.rotY, 0);
+                        const proj = project3D(pt.x * (ast.radius / 20), pt.y * (ast.radius / 20), pt.z * (ast.radius / 20), ast.rotX, ast.rotY, 0);
                         if (idx === 0) ctx.moveTo(proj.px, proj.py);
                         else ctx.lineTo(proj.px, proj.py);
                     });
@@ -1940,16 +1997,20 @@
                     ctx.shadowBlur = 0;
                 }
 
+                // PIXEL ART bullets — square pixels
                 ctx.fillStyle = '#00f3ff';
-                ctx.shadowColor = '#00f3ff'; ctx.shadowBlur = 10;
+                ctx.shadowColor = '#00f3ff'; ctx.shadowBlur = 8;
                 this.entities.bullets.forEach(b => {
-                    ctx.beginPath(); ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2); ctx.fill();
+                    const bSize = Math.round(b.radius * 2);
+                    ctx.fillRect(Math.round(b.x - b.radius), Math.round(b.y - b.radius), bSize, 2);
+                    ctx.fillRect(Math.round(b.x - 1), Math.round(b.y - b.radius), 2, bSize);
                 });
 
                 ctx.fillStyle = '#ff0055';
-                ctx.shadowColor = '#ff0055';
+                ctx.shadowColor = '#ff0055'; ctx.shadowBlur = 8;
                 this.entities.enemyBullets.forEach(eb => {
-                    ctx.beginPath(); ctx.arc(eb.x, eb.y, eb.radius, 0, Math.PI * 2); ctx.fill();
+                    const eSize = Math.round(eb.radius * 2);
+                    ctx.fillRect(Math.round(eb.x - eb.radius), Math.round(eb.y - eb.radius), eSize, eSize);
                 });
                 ctx.shadowBlur = 0;
 
@@ -1958,20 +2019,151 @@
                     ctx.translate(e.x, e.y);
 
                     if (e.isBoss) {
-                        ctx.fillStyle = e.type === 'boss1' ? '#ff0055' : '#9d00ff';
-                        ctx.strokeStyle = '#ffe600';
-                        ctx.lineWidth = 5;
-                        ctx.shadowColor = e.type === 'boss1' ? '#ff0055' : '#9d00ff'; ctx.shadowBlur = 22;
-                        ctx.beginPath(); ctx.arc(0, 0, e.radius, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-                        ctx.shadowBlur = 0;
-
-                        ctx.fillStyle = 'rgba(0,0,0,0.6)';
-                        ctx.fillRect(-70, -e.radius - 22, 140, 12);
-                        ctx.fillStyle = '#ff0055';
-                        ctx.fillRect(-70, -e.radius - 22, 140 * (e.hp / e.maxHp), 12);
+                        // ===== BOSS PIXEL ART SHAPES =====
+                        const t = Date.now() * 0.003;
+                        if (e.type === 'boss1') {
+                            // MECHA-HYDRA: large spiky pixel cross shape
+                            ctx.fillStyle = '#ff0055';
+                            ctx.strokeStyle = '#ffe600';
+                            ctx.lineWidth = 4;
+                            ctx.shadowColor = '#ff0055'; ctx.shadowBlur = 28;
+                            const r = e.radius;
+                            // Central square body
+                            ctx.fillRect(-r * 0.5, -r * 0.5, r, r);
+                            // Spike arms
+                            ctx.fillRect(-r * 1.1, -r * 0.2, r * 0.7, r * 0.4); // left arm
+                            ctx.fillRect(r * 0.4, -r * 0.2, r * 0.7, r * 0.4);  // right arm
+                            ctx.fillRect(-r * 0.2, -r * 1.1, r * 0.4, r * 0.7); // top arm
+                            ctx.fillRect(-r * 0.2, r * 0.4, r * 0.4, r * 0.7);  // bottom arm
+                            // Corner spikes
+                            ctx.fillRect(-r * 0.85, -r * 0.85, r * 0.35, r * 0.35);
+                            ctx.fillRect(r * 0.5, -r * 0.85, r * 0.35, r * 0.35);
+                            ctx.fillRect(-r * 0.85, r * 0.5, r * 0.35, r * 0.35);
+                            ctx.fillRect(r * 0.5, r * 0.5, r * 0.35, r * 0.35);
+                            // Eye pixels
+                            ctx.fillStyle = '#ffe600';
+                            ctx.fillRect(-r * 0.25, -r * 0.15, r * 0.18, r * 0.18);
+                            ctx.fillRect(r * 0.07, -r * 0.15, r * 0.18, r * 0.18);
+                            ctx.strokeRect(-r * 0.5, -r * 0.5, r, r);
+                            ctx.shadowBlur = 0;
+                        } else if (e.type === 'boss2') {
+                            // OMEGA-9: skull pixel art
+                            ctx.fillStyle = '#9d00ff';
+                            ctx.strokeStyle = '#ffe600';
+                            ctx.lineWidth = 4;
+                            ctx.shadowColor = '#9d00ff'; ctx.shadowBlur = 30;
+                            const r = e.radius;
+                            // Skull dome
+                            ctx.fillRect(-r * 0.7, -r * 0.9, r * 1.4, r * 1.0);
+                            // Jaw
+                            ctx.fillRect(-r * 0.5, r * 0.1, r * 1.0, r * 0.5);
+                            // Teeth gaps
+                            ctx.fillStyle = '#000';
+                            ctx.fillRect(-r * 0.35, r * 0.25, r * 0.18, r * 0.35);
+                            ctx.fillRect(-r * 0.05, r * 0.25, r * 0.18, r * 0.35);
+                            ctx.fillRect(r * 0.18, r * 0.25, r * 0.18, r * 0.35);
+                            // Eyes (glowing)
+                            ctx.fillStyle = '#ff0055';
+                            ctx.fillRect(-r * 0.45, -r * 0.5, r * 0.32, r * 0.32);
+                            ctx.fillRect(r * 0.13, -r * 0.5, r * 0.32, r * 0.32);
+                            ctx.fillStyle = '#fff';
+                            ctx.fillRect(-r * 0.38, -r * 0.43, r * 0.14, r * 0.14);
+                            ctx.fillRect(r * 0.2, -r * 0.43, r * 0.14, r * 0.14);
+                            ctx.strokeStyle = '#ffe600'; ctx.lineWidth = 3;
+                            ctx.strokeRect(-r * 0.7, -r * 0.9, r * 1.4, r * 1.0);
+                            ctx.shadowBlur = 0;
+                        }
+                        // Boss HP bar (pixel style)
+                        ctx.fillStyle = 'rgba(0,0,0,0.7)';
+                        ctx.fillRect(-72, -e.radius - 26, 144, 14);
+                        ctx.fillStyle = e.hp > e.maxHp * 0.5 ? '#ff0055' : '#ffe600';
+                        ctx.fillRect(-72, -e.radius - 26, 144 * (e.hp / e.maxHp), 14);
+                        ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 1;
+                        ctx.strokeRect(-72, -e.radius - 26, 144, 14);
                     } else {
-                        ctx.fillStyle = e.type === 'crawler' ? '#ffaa00' : e.type === 'turret' ? '#ff0055' : '#00f3ff';
-                        ctx.beginPath(); ctx.arc(0, 0, e.radius, 0, Math.PI * 2); ctx.fill();
+                        // ===== REGULAR ENEMY PIXEL SHAPES =====
+                        const r = e.radius;
+                        const t = Date.now() * 0.004;
+
+                        if (e.type === 'drone') {
+                            // DRONE: forward-pointing triangle (arrow/ship shape)
+                            const angleToPlayer = Math.atan2(
+                                game.player.y - e.y, game.player.x - e.x
+                            );
+                            ctx.rotate(angleToPlayer - Math.PI / 2);
+                            ctx.fillStyle = '#00e5ff';
+                            ctx.strokeStyle = '#ffffff';
+                            ctx.lineWidth = 2;
+                            ctx.shadowColor = '#00e5ff'; ctx.shadowBlur = 14;
+                            // Pixel triangle
+                            ctx.fillRect(-r * 0.12, -r * 0.95, r * 0.24, r * 0.5);  // nose
+                            ctx.fillRect(-r * 0.4, -r * 0.45, r * 0.8, r * 0.35);   // mid body
+                            ctx.fillRect(-r * 0.8, -r * 0.1, r * 1.6, r * 0.28);    // wings
+                            ctx.fillRect(-r * 0.3, r * 0.18, r * 0.6, r * 0.4);     // tail
+                            ctx.fillStyle = '#ff0';
+                            ctx.fillRect(-r * 0.1, r * 0.3, r * 0.2, r * 0.25);     // engine glow
+                            ctx.shadowBlur = 0;
+
+                        } else if (e.type === 'crawler') {
+                            // CRAWLER: pixel diamond/rhombus
+                            ctx.fillStyle = '#ff9900';
+                            ctx.strokeStyle = '#ffee00';
+                            ctx.lineWidth = 2;
+                            ctx.shadowColor = '#ff9900'; ctx.shadowBlur = 12;
+                            ctx.fillRect(-r * 0.2, -r, r * 0.4, r * 2);    // vertical strip
+                            ctx.fillRect(-r, -r * 0.2, r * 2, r * 0.4);    // horizontal strip
+                            ctx.fillRect(-r * 0.6, -r * 0.6, r * 0.4, r * 0.4); // top-left
+                            ctx.fillRect(r * 0.2, -r * 0.6, r * 0.4, r * 0.4);  // top-right
+                            ctx.fillRect(-r * 0.6, r * 0.2, r * 0.4, r * 0.4);  // bot-left
+                            ctx.fillRect(r * 0.2, r * 0.2, r * 0.4, r * 0.4);   // bot-right
+                            ctx.fillStyle = '#fff';
+                            ctx.fillRect(-r * 0.1, -r * 0.1, r * 0.2, r * 0.2); // center pixel
+                            ctx.shadowBlur = 0;
+
+                        } else if (e.type === 'turret') {
+                            // TURRET: rotating square body with gun barrel
+                            ctx.rotate(t);
+                            ctx.fillStyle = '#ff2244';
+                            ctx.strokeStyle = '#ff8888';
+                            ctx.lineWidth = 2;
+                            ctx.shadowColor = '#ff2244'; ctx.shadowBlur = 14;
+                            // Square body (pixel)
+                            ctx.fillRect(-r * 0.6, -r * 0.6, r * 1.2, r * 1.2);
+                            // Gun barrels (4 directions)
+                            ctx.fillStyle = '#aa0033';
+                            ctx.fillRect(-r * 0.1, -r * 1.1, r * 0.2, r * 0.6);
+                            ctx.fillRect(-r * 0.1, r * 0.5, r * 0.2, r * 0.6);
+                            ctx.fillRect(-r * 1.1, -r * 0.1, r * 0.6, r * 0.2);
+                            ctx.fillRect(r * 0.5, -r * 0.1, r * 0.6, r * 0.2);
+                            // Red core
+                            ctx.fillStyle = '#ffaaaa';
+                            ctx.fillRect(-r * 0.22, -r * 0.22, r * 0.44, r * 0.44);
+                            ctx.shadowBlur = 0;
+
+                        } else if (e.type === 'shifter') {
+                            // SHIFTER: 6-pointed pixel star (phase teleporter)
+                            ctx.rotate(t * 0.5);
+                            ctx.fillStyle = '#cc00ff';
+                            ctx.strokeStyle = '#ff88ff';
+                            ctx.lineWidth = 2;
+                            ctx.shadowColor = '#cc00ff'; ctx.shadowBlur = 18;
+                            // Vertical & horizontal arms
+                            ctx.fillRect(-r * 0.18, -r, r * 0.36, r * 2);
+                            ctx.fillRect(-r, -r * 0.18, r * 2, r * 0.36);
+                            // Diagonal blocks for 6-point star
+                            ctx.save();
+                            ctx.rotate(Math.PI / 3);
+                            ctx.fillRect(-r * 0.18, -r, r * 0.36, r * 2);
+                            ctx.restore();
+                            ctx.save();
+                            ctx.rotate(-Math.PI / 3);
+                            ctx.fillRect(-r * 0.18, -r, r * 0.36, r * 2);
+                            ctx.restore();
+                            // Glowing center
+                            ctx.fillStyle = '#ffffff';
+                            ctx.fillRect(-r * 0.2, -r * 0.2, r * 0.4, r * 0.4);
+                            ctx.shadowBlur = 0;
+                        }
                     }
                     ctx.restore();
                 });
@@ -2008,10 +2200,12 @@
                     ctx.restore();
                 }
 
+                // PIXEL ART particles — square blocks
                 this.entities.particles.forEach(p => {
                     ctx.fillStyle = p.color;
                     ctx.globalAlpha = Math.max(0, p.life);
-                    ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fill();
+                    const ps = Math.max(2, Math.round(p.radius * 2));
+                    ctx.fillRect(Math.round(p.x - p.radius), Math.round(p.y - p.radius), ps, ps);
                 });
                 ctx.globalAlpha = 1.0;
 
@@ -2121,4 +2315,5 @@
         requestAnimationFrame(loop);
     </script>
 </body>
+
 </html>
